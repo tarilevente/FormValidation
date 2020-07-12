@@ -1,0 +1,97 @@
+html {
+    background-color: rgba(00, 00, 00, 0.1);
+    font-size: large;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body{
+    margin: 2rem;
+}
+
+.printerror {
+    min-height: 2rem;
+}
+
+hr{
+    background-color: white;
+    border: 2px solid rgba(00, 00, 00, 0.1);
+}
+.container{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 500px;
+}
+
+.container form > div{
+    margin-top: 0.5rem;
+    display: flex;
+}
+
+.container form div div{
+    min-width:280px;
+    text-align: right;
+    padding-right: 0.4rem;
+}
+
+input {
+    width:100%;
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    padding-top:0.6rem;
+    padding-bottom:0.6rem;
+    color:beige;
+    background-color: chocolate;
+    font-variant: small-caps;
+    line-height: 1rem;
+    letter-spacing: 0.25rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h5 {
+    color:darkslateblue;
+    letter-spacing: 0.05rem;
+}
+
+::selection {
+    background: #ffb7b7; /* WebKit/Blink Browsers */
+  }
+
+.fwd {
+    width:100%;
+    text-align: center;
+}
+
+a {
+    margin-top:1rem;
+    margin-bottom:1rem;
+    text-decoration: none;
+    color:chocolate;
+}
+
+a:visited {
+    cursor: pointer;
+}
+a:link {
+    cursor: pointer;
+}
+a:hover {
+    cursor: pointer;
+    color:coral;
+}
+
+.notFound {
+    color: red;
+    background-color: lightyellow;
+    text-align: center;
+    padding:0.75rem;
+    margin:0.25rem;
+}
+
+.center {
+    text-align: center;
+}

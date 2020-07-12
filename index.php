@@ -1,10 +1,5 @@
 <?php
 session_start();
-if(isset($_SESSION['error'])){
-    echo $_SESSION['error'];
-    unset($_SESSION['error']);
-}
-
 if( isset($_GET['url']) ) { $url = $_GET['url']; } else { $url=null; }
 
 function __autoload($class){
@@ -20,7 +15,10 @@ if(file_exists('Controllers/'.$url.'.controller.php')){
 }else{
     require 'Controllers/index.controller.php';
     $controller=new Index;
+    echo "  
+    <script>
+        const err=document.getElementsByClassName(\"printerror\")[0];   
+        err.innerHTML='<h4 class=\"notFound\">A keresett oldal nem található! :(</h4>';
+        console.log(err);
+    </script>";
 }
-
-
-    

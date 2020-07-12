@@ -2,6 +2,6 @@
 
 class ValidationModel{
     function printHI(){
-        echo 'hi';
+        echo 'hi, i am a validation modell';
     }
 }
