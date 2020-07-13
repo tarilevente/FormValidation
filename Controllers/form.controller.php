@@ -5,7 +5,7 @@ class Form{
 
     function __construct(){
         $this->view=new View();
-        require('Models/validation.model.php');
+        
 
         View::show('form');
     }
