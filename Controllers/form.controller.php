@@ -1,14 +1,12 @@
 <?php
 
-class Form {
+class Form extends Controller {
     private $view;
     private static $transaction;
 
     public static $cnError;
     public static $edError;
     public static $aError;
-
-    // public static $bef=null;
 
     function __construct(){
         $this->view=new View();
@@ -30,7 +28,6 @@ class Form {
         
         $errorExists=false;
         $transaction=new Transaction($cn,$edMM,$edYY,$a);
-        // $transaction->tostring();
         try{
             $transaction->cnIsValid($cn);
         }catch(Exception $e){ self::$cnError=$e->getMessage(); $errorExists=true; }
@@ -42,7 +39,7 @@ class Form {
         }catch(Exception $g){ self::$aError=$g->getMessage(); $errorExists=true;  }
 
         $_SESSION['amount']=$a;
-        return $errorexists ? false : true;
+        return $errorExists ? false : true;
     }
 
 }

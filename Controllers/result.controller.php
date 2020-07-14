@@ -1,7 +1,7 @@
 <?php
 include('form.controller.php');
 
-class Result{
+class Result extends Controller {
     private $api;
     private static $beforeShown=false;
     private static $afterShown=false;
@@ -14,21 +14,20 @@ class Result{
         $this->getBef(); 
         $this->calculateAfter(); 
         View::show('result');
+        $this->sess_destr();
     }
 
     private function getBef(){
         if(isset($_SESSION['amount']) && !empty($_SESSION['amount'])){
             self::$beforeShown=$_SESSION['amount'];
             return self::$beforeShown;
-        }
-        else{
+        }else{
             return false;
         }
     }
 
     public function calculateAfter(){
         $bef=self::$beforeShown;
-        // var_dump($bef);
         try{
             $var=$this->api->convertCurrency(self::$beforeShown);
             if($var>-1){ self::$afterShown = $var; }
@@ -37,8 +36,6 @@ class Result{
                     self::$error=$this->api->getErrorMsg();
                 }
         }catch(Exception $e){}
-        // self::$afterShown = $this->api->convertCurrency2(self::$beforeShown,"HUF","EUR");
-        // var_dump(self::$afterShown);
     }
 
     public static function getBefore(){
@@ -57,4 +54,7 @@ class Result{
         unset($_SESSION['amount']);
     }
 
+    public static function noSession(){
+       return isset($_SESSION['amount'])&&!empty($_SESSION['amount']) ? false : true;
+    }
 }

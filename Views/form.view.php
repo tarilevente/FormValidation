@@ -2,7 +2,7 @@
 
 if(isset($_POST) &&!empty($_POST)){
     $process = Form::validate($_POST);
-    if($process){ header('Location:result'); }
+    if($process) header('Location:result'); 
 }
 ?>
 <!DOCTYPE html>

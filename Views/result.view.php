@@ -14,7 +14,13 @@ if(Result::getBefore()){
       <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <div class="printerror"></div>
+        <div class="printerror"><?php 
+                                    if(!Result::noSession()){
+                                        if($error)echo '<h4 class="notFound">'.$error.'</h4>'; 
+                                    }else{
+                                        echo '<h4 class="notFound">Valami hiba történt, próbáld újra!</h4>';
+                                    }
+                                ?></div>
         <h3>Az átváltás eredménye:</h3> 
         <div class="flex">
             <div>
@@ -24,7 +30,6 @@ if(Result::getBefore()){
                 <h4 class="center"><strong> <?php echo $after; ?></strong>&nbsp&nbsp<small><i>EUR</i></small></h4>
             </div>
         </div>
-        <?php if($error)echo '<div class="error">'.$error.'</div>'; ?>
         <div class="bck">
          <a href="form">Vissza</a> 
         </div>
