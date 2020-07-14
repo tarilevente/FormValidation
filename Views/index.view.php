@@ -12,7 +12,7 @@ $content['html']='
             <h3>Tari Levente<hr></h3>
             
             <h5><code>A feladatmeghatározás szerint elkészítettem a form-validációs lépéseket.<br>
-            Amennyiben a pályázatom felkeltette az érdeklődését,<br> állok rendelkezésre az alábbi e-mail címen:
+            Amennyiben a pályázatom felkeltette az érdeklődését,<br> állok rendelkezésre a következő e-mail címen:
             taril88@gmail.com</code></h5>
 
             <div class="fwd">

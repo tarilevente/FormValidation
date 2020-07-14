@@ -1,5 +1,11 @@
 <?php
-class Transaction {
+interface TransactionInterface {
+    function cnIsValid($cn);
+    function edIsValid($edMM,$edYY);
+    function aIsValid($a);
+}
+
+class Transaction implements TransactionInterface {
     private $cn;
     private $edMM;
     private $edYY;
@@ -42,7 +48,7 @@ class Transaction {
             }
         }
         if(!$this->LuhnValid($cn)){
-            throw new Exception("A megadott kártyaszám nem megfelelő!");
+            throw new Exception("Nem bankkártya szám!");
             return false;
         }
         return true;
@@ -80,13 +86,5 @@ class Transaction {
             return false;
         }
     }
-
-    // public function tostring(){
-    //     echo 'cn: '.$this->cn.'<br>';
-    //     echo 'edmm: '.$this->edMM.'<br>';
-    //     echo 'edyy: '.$this->edYY.'<br>';
-    //     echo 'a: '.$this->a.'<br>';
-    //     return;
-    // }
 }
 
